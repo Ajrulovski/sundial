@@ -349,11 +349,11 @@ public class Sundial extends CanvasWatchFaceService {
                 {
                     // Write text in case no data was sent from main sunshine app
                     String weatherMessText = getResources().getString(R.string.no_data);
-                    StaticLayout mTextLayout = new StaticLayout(weatherMessText, tp, canvas.getWidth(), Layout.Alignment.ALIGN_CENTER, 1, 1, true);
+                    StaticLayout mTextLayout = new StaticLayout(weatherMessText, tp, canvas.getWidth()*6/8, Layout.Alignment.ALIGN_CENTER, 1, 1, true);
 
                     canvas.save();
 
-                    float lowCanvasXPos = (canvas.getWidth() / 4);
+                    float lowCanvasXPos = (canvas.getWidth() / 8);
                     float lowCanvasYPos = mYOffset;
                     canvas.translate(lowCanvasXPos, lowCanvasYPos);
                     mTextLayout.draw(canvas);
