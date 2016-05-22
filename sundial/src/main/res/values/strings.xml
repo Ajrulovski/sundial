@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">sundial</string>
+    <string name="my_digital_name">Sundial</string>
+    <string name="w_storm">You might want to sit this one through.</string>
+    <string name="w_rain">Enjoy the sound of falling raindrops.</string>
+    <string name="w_lightrain">Grab your umbrella and start singing.</string>
+    <string name="w_snow">Time to get them snow boots!</string>
+    <string name="w_fog">If you\'re driving, be carefull.</string>
+    <string name="w_clear">Don\'t forget your sunglasses.</string>
+    <string name="w_lightclouds">Feel the sun through those clouds.</string>
+    <string name="w_cloudy">Great day for a run, don\'t you think?</string>
+    <string name="no_data">Please pair your phone with the watch and startup sunshine.</string>
+</resources>
