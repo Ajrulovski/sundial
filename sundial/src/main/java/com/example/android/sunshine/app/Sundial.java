@@ -461,22 +461,21 @@ public class Sundial extends CanvasWatchFaceService {
         public void onReceive(Context context, Intent intent) {
             String message = intent.getStringExtra("message");
             Log.v("RecTag", "Main watchface received message: " + message);
-            String[] mesparts = message.split(";");
-            //int iconId = getIconResourceForWeatherCondition(weatherId);
+            if(message.equals("NoData")) {
+                Log.v("ERROR", "Sunshine app has no data available");
+            }
+            else {
+                Log.v("RecTag", "received message: " + message);
+                String[] mesparts = message.split(";");
+                //int iconId = getIconResourceForWeatherCondition(weatherId);
 
-            SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-            editor.putString("sundailMessage", message);
-            editor.putString("weatherid", mesparts[0]);
-            editor.putString("high", mesparts[1]);
-            editor.putString("low", mesparts[2]);
-            editor.commit();
-
-            //SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-            //String restoredText = prefs.getString("sundailMessage", null);
-
-            //Log.v("RecTagFromPrefs", restoredText);
-            // Display message in UI
-            //mTextView.setText(message);
+                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString("sundailMessage", message);
+                editor.putString("weatherid", mesparts[0]);
+                editor.putString("high", mesparts[1]);
+                editor.putString("low", mesparts[2]);
+                editor.commit();
+            }
         }
     }
 
